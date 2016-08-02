@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-2 16:17:00 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.cart.vo.Cart" table="t_carts">
+        <id name="cid" type="java.lang.Integer">
+            <column name="cid" />
+            <generator class="native" />
+        </id>
+        <property name="total" type="java.lang.Double">
+            <column name="total"/>
+        </property>
+        <many-to-one name="user" class="cn.me.tpoff.user.vo.User" fetch="join" lazy="false">
+            <column name="uid" />
+        </many-to-one>
+        <property name="count" type="java.lang.Integer">
+            <column name="count" />
+        </property>
+        <set name="cartItems" table="t_cartitems" inverse="false" lazy="false" fetch="join" order-by="cmid" cascade="all">
+            <key>
+                <column name="cid" />
+            </key>
+            <one-to-many class="cn.me.tpoff.cartitem.vo.CartItem" />
+        </set>
+    </class>
+</hibernate-mapping>

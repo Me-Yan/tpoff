@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 配置c3p0连接池 -->
+	<!-- 引入外部属性文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<!-- 配置C3P0连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	   <property name="driverClass" value="${jdbc.driver}"></property>
+	   <property name="jdbcUrl" value="${jdbc.url}"></property>
+	   <property name="user" value="${jdbc.user}"></property>
+	   <property name="password" value="${jdbc.password}"></property>
+	</bean>
+	
+	<!-- 使用LocalSessionFactoryBean配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	   <!-- 注入连接池 -->
+	   <property name="dataSource" ref="dataSource"></property>
+	   <!-- 其他属性 -->
+	   <property name="hibernateProperties">
+	       <props>
+	           <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+	           <prop key="hibernate.show_sql">true</prop>
+	           <prop key="hibernate.format_sql">true</prop>
+	           <prop key="hibernate.connection.autocommit">false</prop>
+	           <prop key="hibernate.hbm2ddl.auto">update</prop>
+	           <prop key="current_session_context_class">thread</prop>
+	       </props>
+	   </property>
+		<!-- 配置hibernate的映射文件 -->
+	   <property name="mappingResources">
+	       <list>
+	           <value>cn/me/tpoff/user/vo/User.hbm.xml</value>
+	           <value>cn/me/tpoff/category/vo/Category.hbm.xml</value>
+	           <value>cn/me/tpoff/categorysecond/vo/CategorySecond.hbm.xml</value>
+	           <value>cn/me/tpoff/product/vo/Product.hbm.xml</value>
+	           <value>cn/me/tpoff/slideimg/vo/SlideImg.hbm.xml</value>
+	           <value>cn/me/tpoff/show/vo/Show.hbm.xml</value>
+	           <value>cn/me/tpoff/detail/vo/Detail.hbm.xml</value>
+	           <value>cn/me/tpoff/comment/vo/Comment.hbm.xml</value>
+	           <value>cn/me/tpoff/address/vo/Address.hbm.xml</value>
+	           <value>cn/me/tpoff/cart/vo/Cart.hbm.xml</value>
+	           <value>cn/me/tpoff/cartitem/vo/CartItem.hbm.xml</value>
+	           <value>cn/me/tpoff/collection/vo/Collection.hbm.xml</value>
+	           <value>cn/me/tpoff/order/vo/Order.hbm.xml</value>
+	           <value>cn/me/tpoff/orderitem/vo/OrderItem.hbm.xml</value>
+	           <value>cn/me/tpoff/admin/user/vo/AdminUser.hbm.xml</value>	           
+	       </list>
+	   </property>
+		
+	</bean>
+	
+	<!-- 事务管理 -->
+	<!-- 事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 开启注解事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    
+    <!-- Action的配置======================================================================================action -->
+    
+    <!-- 跳转到首页 -->
+    <bean id="indexAction" class="cn.me.tpoff.index.action.IndexAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="productService" ref="productService"></property>
+        <property name="slideImgService" ref="slideImgService"></property>
+        <property name="cartService" ref="cartService"></property>
+    </bean>    
+    <!-- 图片验证码  -->
+    <bean id="codeAction" class="cn.me.tpoff.user.action.CodeAction" scope="prototype"></bean>    
+    <!-- 登录 -->
+    <bean id="userAction" class="cn.me.tpoff.user.action.UserAction" scope="prototype">
+        <property name="userService" ref="userService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="cartService" ref="cartService"></property>
+    </bean>
+    <!-- 商品 -->
+    <bean id="productAction" class="cn.me.tpoff.product.action.ProductAction" scope="prototype">
+        <property name="productService" ref="productService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="categorySecondService" ref="categorySecondService"></property>
+        <property name="cartService" ref="cartService"></property>
+    </bean>
+    <!-- 地址管理 -->
+    <bean id="addressAction" class="cn.me.tpoff.address.action.AddressAction" scope="prototype">
+        <property name="addressService" ref="addressService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="cartService" ref="cartService"></property>
+    </bean>
+    <!-- 购物车 -->
+    <bean id="cartAction" class="cn.me.tpoff.cart.action.CartAction" scope="prototype">
+        <property name="cartService" ref="cartService"></property>
+    </bean>
+    <!-- 订单 -->
+    <bean id="orderAction" class="cn.me.tpoff.order.action.OrderAction" scope="prototype">
+        <property name="orderService" ref="orderService"></property>
+        <property name="cartService" ref="cartService"></property>
+        <property name="addressService" ref="addressService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+    </bean>
+    <!-- 收藏  -->
+    <bean id="collectionAction" class="cn.me.tpoff.collection.action.CollectionAction" scope="prototype">
+        <property name="collectionService" ref="collectionService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="cartService" ref="cartService"></property>
+    </bean>
+    <!-- 查询最近的订单和收藏 -->
+    <bean id="recentAction" class="cn.me.tpoff.recent.action.RecentAction" scope="prototype">
+        <property name="orderService" ref="orderService"></property>
+        <property name="collectionService" ref="collectionService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="cartService" ref="cartService"></property>
+    </bean>
+    <!-- 后台管理用户 -->
+    <bean id="adminUserAction" class="cn.me.tpoff.admin.user.action.AdminUserAction" scope="prototype">
+        <property name="adminUserService" ref="adminUserService"></property>
+    </bean>
+    <!-- 跳转到后台首页 -->
+    <bean id="adminIndexAction" class="cn.me.tpoff.admin.index.action.AdminIndexAction" scope="prototype">
+        <property name="adminIndexService" ref="adminIndexService"></property>
+    </bean>
+    <!-- 后台管理商品 -->
+    <bean id="adminProductAction" class="cn.me.tpoff.admin.product.action.AdminProductAction" scope="prototype">
+        <property name="adminProductService" ref="adminProductService"></property>
+    </bean>
+    <!-- 后台订单管理 -->
+    <bean id="adminOrderAction" class="cn.me.tpoff.admin.order.action.AdminOrderAction" scope="prototype">
+        <property name="adminOrderService" ref="adminOrderService"></property>
+    </bean>
+    <!-- 后台轮播图管理 -->    
+    <bean id="adminSlideAction" class="cn.me.tpoff.admin.slide.action.AdminSlideAction" scope="prototype">
+        <property name="adminSlideService" ref="adminSlideService"></property>
+    </bean>
+    <!-- 后台一级分类管理 -->
+    <bean id="adminCategoryAction" class="cn.me.tpoff.admin.category.action.AdminCategoryAction" scope="prototype">
+        <property name="adminCategoryService" ref="adminCategoryService"></property>
+    </bean>
+    <!-- 后台二级分类管理 -->
+    <bean id="adminCategorySecondAction" class="cn.me.tpoff.admin.categorysecond.action.AdminCategorySecondAction" scope="prototype">
+        <property name="adminCategorySecondService" ref="adminCategorySecondService"></property>
+    </bean>
+    
+    <!-- Service的配置 =====================================================================================service -->
+    
+    <!-- 登录 -->
+    <bean id="userService" class="cn.me.tpoff.user.service.UserService">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+    <!-- 一级分类 -->
+    <bean id="categoryService" class="cn.me.tpoff.category.service.CategoryService">
+        <property name="categoryDao" ref="categoryDao"></property>
+    </bean>
+    <!-- 商品 -->
+    <bean id="productService" class="cn.me.tpoff.product.service.ProductService">
+        <property name="productDao" ref="productDao"></property>
+    </bean>
+    <!-- 轮播图片 -->
+    <bean id="slideImgService" class="cn.me.tpoff.slideimg.service.SlideImgService">
+        <property name="slideImgDao" ref="slideImgDao"></property>
+    </bean>
+    <!-- 二级分类 -->
+    <bean id="categorySecondService" class="cn.me.tpoff.categorysecond.service.CategorySecondService">
+        <property name="categorySecondDao" ref="categorySecondDao"></property>
+    </bean>
+    <!-- 地址管理 -->
+    <bean id="addressService" class="cn.me.tpoff.address.service.AddressService">
+        <property name="addressDao" ref="addressDao"></property>
+    </bean>
+    <!-- 购物车 -->
+    <bean id="cartService" class="cn.me.tpoff.cart.service.CartService">
+        <property name="cartDao" ref="cartDao"></property>
+        <property name="productDao" ref="productDao"></property>
+    </bean>
+    <!-- 订单 -->
+    <bean id="orderService" class="cn.me.tpoff.order.service.OrderService">
+        <property name="orderDao" ref="orderDao"></property>
+        <property name="cartDao" ref="cartDao"></property>
+        <property name="addressDao" ref="addressDao"></property>
+    </bean>
+    <!-- 收藏  -->
+    <bean id="collectionService" class="cn.me.tpoff.collection.service.CollectionService">
+        <property name="collectionDao" ref="collectionDao"></property>
+        <property name="productDao" ref="productDao"></property>
+    </bean>
+    <!-- 后台管理用户 -->
+    <bean id="adminUserService" class="cn.me.tpoff.admin.user.service.AdminUserService">
+        <property name="adminUserDao" ref="adminUserDao"></property>
+    </bean>
+    <!-- 后台主页数据 -->
+    <bean id="adminIndexService" class="cn.me.tpoff.admin.index.service.AdminIndexService">
+        <property name="adminIndexDao" ref="adminIndexDao"></property>
+    </bean>
+    <!-- 后台管理商品 -->
+    <bean id="adminProductService" class="cn.me.tpoff.admin.product.service.AdminProductService">
+        <property name="adminProductDao" ref="adminProductDao"></property>
+    </bean>
+    <!-- 后台订单管理 -->
+    <bean id="adminOrderService" class="cn.me.tpoff.admin.order.service.AdminOrderService">
+        <property name="adminOrderDao" ref="adminOrderDao"></property>
+    </bean>
+    <!-- 后台轮播图管理 -->
+    <bean id="adminSlideService" class="cn.me.tpoff.admin.slide.service.AdminSlideService">
+        <property name="adminSlideDao" ref="adminSlideDao"></property>
+    </bean>
+    <!-- 后台一级分类 -->
+    <bean id="adminCategoryService" class="cn.me.tpoff.admin.category.service.AdminCategoryService">
+        <property name="adminCategoryDao" ref="adminCategoryDao"></property>
+    </bean>
+    <!-- 后台二级分类管理 -->
+    <bean id="adminCategorySecondService" class="cn.me.tpoff.admin.categorysecond.service.AdminCategorySecondService">
+        <property name="adminCategorySecondDao" ref="adminCategorySecondDao"></property>
+    </bean>
+    
+    <!-- Dao的配置 =========================================================================================dao -->
+    
+    <!-- 登录 -->
+    <bean id="userDao" class="cn.me.tpoff.user.dao.UserDao" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 一级分类 -->
+    <bean id="categoryDao" class="cn.me.tpoff.category.dao.CategoryDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 商品 -->
+    <bean id="productDao" class="cn.me.tpoff.product.dao.ProductDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 轮播图片 -->
+    <bean id="slideImgDao" class="cn.me.tpoff.slideimg.dao.SlideImgDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 二级分类 -->
+    <bean id="categorySecondDao" class="cn.me.tpoff.categorysecond.dao.CategorySecondDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 地址管理 -->
+    <bean id="addressDao" class="cn.me.tpoff.address.dao.AddressDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 购物车  -->
+    <bean id="cartDao" class="cn.me.tpoff.cart.dao.CartDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 订单 -->
+    <bean id="orderDao" class="cn.me.tpoff.order.dao.OrderDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 收藏 -->
+    <bean id="collectionDao" class="cn.me.tpoff.collection.dao.CollectionDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台管理用户 -->
+    <bean id="adminUserDao" class="cn.me.tpoff.admin.user.dao.AdminUserDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台主页数据 -->
+    <bean id="adminIndexDao" class="cn.me.tpoff.admin.index.dao.AdminIndexDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台商品管理 -->
+    <bean id="adminProductDao" class="cn.me.tpoff.admin.product.dao.AdminProductDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台订单管理 -->
+    <bean id="adminOrderDao" class="cn.me.tpoff.admin.order.dao.AdminOrderDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台轮播图管理 -->
+    <bean id="adminSlideDao" class="cn.me.tpoff.admin.slide.dao.AdminSlideDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台一级分类管理 -->
+    <bean id="adminCategoryDao" class="cn.me.tpoff.admin.category.dao.AdminCategoryDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 后台二级分类管理 -->
+    <bean id="adminCategorySecondDao" class="cn.me.tpoff.admin.categorysecond.dao.AdminCategorySecondDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+</beans>

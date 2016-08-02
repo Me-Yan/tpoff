@@ -1,0 +1,128 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0 20px;
+	color: #404D5B;
+	background-color: #f9f7f6;
+}
+.clearBoth {
+	clear: both;
+}
+
+/*内容*/
+.title {
+	margin-top: 20px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #393939;
+	color: #ddd;
+}
+.title span {
+	margin-left: 20px;
+}
+.content {
+	padding: 20px;
+}
+.content li {
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+.content li span {
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #337AB7;
+	float: left;
+	color: #fff;
+	border-radius: 5px;
+}
+.delete {
+	display: inline-block;
+	float: left;
+	margin-left: 20px;
+	background-color: #393939;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #ddd;
+	border-radius: 5px;
+	position: relative;
+	top: 5px;
+}
+.edit {
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+	background-color: #393939;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #ddd;
+	border-radius: 5px;
+	position: relative;
+	top: 5px;
+}
+.hid {
+	display: none;
+	float: left;
+	margin-left: 20px;
+}
+.category {
+	height: 35px;
+	border: 1px solid #ccc;
+	padding-left: 10px;
+	width: 200px;
+	border-radius: 5px;
+}
+.sBtn, .merge, .btn {
+	margin-left: 20px;
+	display: inline-block;
+	background-color: #393939;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #ddd;
+	border-radius: 5px;
+}
+a:hover {
+	background-color: #595959;
+}
+.category:focus {
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 5px 0px #337AB7;
+}
+/*添加*/
+.head {
+	padding-top: 20px;
+}
+.add {
+	margin-left: 20px;
+	display: inline-block;
+	background-color: #337AB7;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	border-radius: 5px;
+	float: left;
+}
+.add:hover {
+	background-color: #286090;
+}

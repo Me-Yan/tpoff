@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-22 9:56:13 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.user.vo.User" table="t_users">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid" />
+            <generator class="native" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="username" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="realname" type="java.lang.String">
+            <column name="realname" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="gender" />
+        </property>
+        <property name="province" type="java.lang.String">
+            <column name="province" />
+        </property>
+        <property name="regtime" type="java.sql.Date">
+            <column name="regtime" />
+        </property>
+        <property name="upath" type="java.lang.String">
+            <column name="upath" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="pcode" type="java.lang.String">
+            <column name="pcode" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+        <property name="ecode" type="java.lang.String">
+            <column name="ecode" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state"></column>
+        </property>
+    </class>
+</hibernate-mapping>

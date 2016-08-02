@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-3 9:05:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.collection.vo.Collection" table="t_collections">
+        <id name="colid" type="java.lang.Integer">
+            <column name="colid" />
+            <generator class="native" />    
+        </id>
+        <many-to-one name="product" class="cn.me.tpoff.product.vo.Product" fetch="join" lazy="false">
+            <column name="pid" />
+        </many-to-one>
+        <property name="coldate" type="java.sql.Date">
+            <column name="coldate" />
+        </property>
+        <many-to-one name="user" class="cn.me.tpoff.user.vo.User" fetch="join">
+            <column name="uid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

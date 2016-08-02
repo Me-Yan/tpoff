@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-26 16:58:45 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.category.vo.Category" table="t_categorys">
+        <id name="cid" type="java.lang.Integer">
+            <column name="cid" />
+            <generator class="native" />
+        </id>
+        <property name="cname" type="java.lang.String">
+            <column name="cname" />
+        </property>
+        <set name="categorySeconds" table="t_categoryseconds" inverse="true" lazy="false" order-by="csid">
+            <key>
+                <column name="cid" />
+            </key>
+            <one-to-many class="cn.me.tpoff.categorysecond.vo.CategorySecond" />
+        </set>
+    </class>
+</hibernate-mapping>

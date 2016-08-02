@@ -1,0 +1,317 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0 20px;
+	color: #404D5B;
+	background-color: #f9f7f6;
+}
+.clearBoth {
+	clear: both;
+}
+
+/*内容*/
+.add {
+	padding-top: 20px;
+}
+.infoTitle, .showTitle, .detailTitle {
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	background-color: #393939;
+	color: #ddd;
+	width: 100px;
+}
+.infoTitle span, .showTitle span, .detailTitle span {
+	margin-left: 20px;
+}
+.infoContent {
+	padding: 20px 20px 0 20px;
+}
+table {
+	width: 100%;
+}
+table tr td:nth-child(1) {
+	padding: 5px 0px;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+}
+table tr td:nth-child(2) {
+	padding: 5px 0px;
+	width: 600px;
+	height: 40px;
+	line-height: 40px;
+
+}
+input {
+	padding-left: 5px;
+	height: 35px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 500px;
+	font-size: 15px;
+	color: #777;
+}
+table tr td:nth-child(2) input:focus {
+	border: 1px solid #66AFE9;
+	-moz-box-shadow: 0px 0px 4px 0px #66AFE9;
+	-webkit-box-shadow: 0px 0px 4px 0px #66AFE9;
+	box-shadow: 0px 0px 4px 0px #66AFE9;
+}
+.function {
+	height: 200px;
+	width: 500px;
+	padding-left: 5px;
+	line-height: 25px;
+	letter-spacing: 1px;
+	color: #777;
+}
+.function:focus {
+	border: 1px solid #66AFE9;
+	-moz-box-shadow: 0px 0px 4px 0px #66AFE9;
+	-webkit-box-shadow: 0px 0px 4px 0px #66AFE9;
+	box-shadow: 0px 0px 4px 0px #66AFE9;
+}
+select {
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 507px;
+}
+select:focus {
+	border: 1px solid #66AFE9;
+	-moz-box-shadow: 0px 0px 4px 0px #66AFE9;
+	-webkit-box-shadow: 0px 0px 4px 0px #66AFE9;
+	box-shadow: 0px 0px 4px 0px #66AFE9;
+}
+select option {
+	padding-left: 5px;
+}
+.show, .detail {
+	margin-top: 20px;
+}
+.showContent, .detailContent {
+	margin-top: 20px;
+	padding-left: 100px;
+}
+.btn {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 50px;
+	color: #ddd;
+	margin-top: 50px;
+}
+.sBtn {
+	display: inline-block;
+	width: 70px;
+	background-color: #292929;
+	border-radius: 5px;
+	color: #ddd;
+}
+.sBtn:hover, .cBtn:hover {
+	background-color: #494949;
+}
+.cBtn {
+	width: 70px;
+	display: inline-block;
+	background-color: #292929;
+	border-radius: 5px;
+	color: #ddd;
+}
+.tip {
+	display: inline-block;
+	margin-left: 20px;
+	margin-top: 10px;
+	color: #e14041;
+	font-size: 15px;
+}
+.hid {
+	display: inline-block;
+	position: relative;
+}
+.hid input {
+	width: 420px;
+	cursor: pointer;
+	height: 35px;
+	line-height: 35px;
+	text-align: left;
+	padding-left: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px 0px 0px 5px;
+}
+.spath, .pspath, .pdpath {
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+label a {
+	display: inline-block;
+	width: 80px;
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	border-radius: 0px 5px 5px 0px;
+	background-color: #337AB7;
+	color: #fff;
+	margin-left: -5px;
+}
+label a:hover {
+	color: #fff;
+	background-color: #286090;
+}
+
+/*图片预览*/
+#showImg, #detailImg {
+	margin-left: 90px;
+}
+#showImg img, #detailImg img {
+	margin-top: 10px;
+	height: 150px;
+	padding: 2px;
+	background-color: #ddd;
+	margin-left: 10px;
+	float: left;
+}
+#showImg img:hover, #detailImg img:hover {
+	box-shadow: 0px 0px 10px 0px #464646;
+}
+.remove {
+	display: none;
+	margin-left: 10px;
+	border-radius: 5px;
+	width: 80px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-color: #337AB7;
+	color: #fff;
+}
+.remove:hover {
+	background-color: #286090;
+}
+/*表单验证提示弹窗*/
+.img-replace {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+}
+.formTip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(94, 110, 141, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.formTip.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+.cd-popup-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 4em auto;
+  background: #FFF;
+  border-radius: .25em .25em .4em .4em;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.cd-popup-container p {
+  padding: 3em 1em;
+}
+.cd-popup-container .close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+}
+.cd-popup-container .close::before, .cd-popup-container .close::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  width: 14px;
+  height: 3px;
+  background-color: #8f9cb5;
+}
+.cd-popup-container .close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 8px;
+}
+.cd-popup-container .close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 8px;
+}
+.is-visible .cd-popup-container {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+@media only screen and (min-width: 1170px) {
+  .cd-popup-container {
+    margin: 8em auto;
+  }
+}
+.title {
+  background-color: #393939;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+}
+.title span {
+  margin-left: 20px;
+}

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!-- 配置开发模式 -->
+    <constant name="struts.devMode" value="false"></constant>
+    <constant name="struts.objectFactory" value="spring"></constant>
+    <constant name="struts.multipart.maxSize" value="10000000" />
+    
+    <package name="tpoff" namespace="/" extends="struts-default,json-default">
+    
+        <interceptors>
+            <interceptor name="loginInterceptor" class="cn.me.tpoff.interceptor.LoginInterceptor"></interceptor>
+            <interceptor name="adminInterceptor" class="cn.me.tpoff.admin.interceptor.AdminInterceptor"></interceptor>
+        </interceptors>
+        
+        <global-results>
+            <result name="loginPage">/WEB-INF/jsp/login.jsp</result>
+            <result name="future" type="redirectAction">index.action</result>
+        </global-results>
+    
+        <!-- 跳转到首页 -->
+        <action name="index" class="indexAction">
+            <result name="index">/WEB-INF/jsp/index.jsp</result>
+        </action>        
+        <!-- 图片验证码 -->
+        <action name="code" class="codeAction">
+        </action>        
+        <!-- 用户操作 -->
+        <action name="user_*" class="userAction" method="{1}">
+            <result name="loginSuccess">/WEB-INF/jsp/index.jsp</result>
+            <result name="logout" type="redirectAction">index</result>
+            <result name="registerPage">/WEB-INF/jsp/register.jsp</result>
+            <result name="regWait">/WEB-INF/jsp/regWait.jsp</result>
+            <result name="regSuccess">/WEB-INF/jsp/regSuccess.jsp</result>
+            <result name="regFail">/WEB-INF/jsp/regFail.jsp</result>
+            <result name="userPage">/WEB-INF/jsp/user.jsp</result>
+            <result name="editUser" type="redirectAction">user_userPage</result>
+            <result name="editHeadImg" type="redirectAction">user_userPage</result>
+            <result name="safetyPage">/WEB-INF/jsp/safety.jsp</result>
+            <result name="editPwd">/WEB-INF/jsp/editSuccess.jsp</result>
+            <result name="confirmEmail">/WEB-INF/jsp/emailSuccess.jsp</result>
+            <interceptor-ref name="loginInterceptor">
+                <param name="includeMethods">userPage,editUser,editHeadImg,safetyPage,checkPwd,editPwd,editEmail,</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 商品 -->
+        <action name="product_*" class="productAction" method="{1}">
+            <result name="productList">/WEB-INF/jsp/productList.jsp</result>
+            <result name="findList">/WEB-INF/jsp/findList.jsp</result>
+            <result name="product">/WEB-INF/jsp/product.jsp</result>
+        </action>
+        <!-- 地址管理  -->
+        <action name="address_*" class="addressAction" method="{1}">
+            <result name="address">/WEB-INF/jsp/address.jsp</result>
+            <result name="addAddr" type="redirectAction">address_addrPage</result>
+            <result name="deleteAddr" type="redirectAction">address_addrPage</result>
+            <result name="editAddr" type="redirectAction">address_addrPage</result>
+            <result name="defaultAddr" type="redirectAction">address_addrPage</result>  
+            <interceptor-ref name="loginInterceptor">
+                <param name="includeMethods">addrPage,addAddr,deleteAddr,editAddr,setDefaultAddr</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>          
+        </action>
+        <!-- 购物车管理 -->
+        <action name="cart_*" class="cartAction" method="{1}">
+            <result name="cartPage">/WEB-INF/jsp/cart.jsp</result>
+            <result name="deleteProduct" type="redirectAction">cart_cartPage</result>
+            <result name="addAddr" type="redirectAction">order_orderFormPage</result>
+            <interceptor-ref name="loginInterceptor">
+                <param name="includeMethods">cartPage,add,less,deleteProductFromCart,addAddr,addToCart</param>
+                
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 订单 -->
+        <action name="order_*" class="orderAction" method="{1}">
+            <result name="orderForm">/WEB-INF/jsp/orderForm.jsp</result>
+            <result name="submitOrder" type="redirectAction">
+                <param name="actionName">order_payPage.action</param>
+                <param name="oid">${oid}</param>
+            </result>
+            <result name="payPage">/WEB-INF/jsp/pay.jsp</result>
+            <result name="commentPage">/WEB-INF/jsp/comment.jsp</result>
+            <result name="orderPage">/WEB-INF/jsp/order.jsp</result>
+            <result name="addToCart" type="redirectAction">order_orderFormPage</result>
+            <interceptor-ref name="loginInterceptor">
+                <param name="includeMethods">orderFormPage,submitOrder,orderPage,addToCart</param>                
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 收藏 -->
+        <action name="collection_*" class="collectionAction" method="{1}">
+            <result name="collectionPage">/WEB-INF/jsp/collection.jsp</result>
+            <result name="deleteCollectionByCid" type="redirectAction">collection_collectionPage</result>
+            <interceptor-ref name="loginInterceptor">
+                <param name="includeMethods">collectionPage,addToCollection,deleteCollectionByColid</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 最近订单、收藏 -->
+        <action name="recent" class="recentAction">
+            <result name="recentPage">/WEB-INF/jsp/home.jsp</result>
+            <interceptor-ref name="loginInterceptor">
+                <param name="includeMethods">execute</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>        
+        <!-- 后台登录、用户列表、头像列表 -->
+        <action name="adminUser_*" class="adminUserAction" method="{1}">
+            <result name="fail" type="redirect">/admin/login.jsp</result>
+            <result name="success" type="redirectAction">adminIndex_index</result>
+            <result name="editPwdPage">/WEB-INF/admin/editPassword.jsp</result>
+            <result name="logout" type="redirect">/admin/login.jsp</result>
+            <result name="editSuccess" type="redirect">/WEB-INF/admin/redirect.jsp</result>
+            <result name="editFail">/WEB-INF/admin/editPassword.jsp</result>
+            <result name="userPage">/WEB-INF/admin/user.jsp</result>
+            <result name="addUser" type="redirectAction">adminUser_userPage.action?add=1</result>
+            <result name="deleteUser" type="redirectAction">adminUser_userPage.action?delete=1</result>
+            <result name="editUser" type="redirectAction">adminUser_userPage.action?edit=1</result>
+            <result name="headImgPage">/WEB-INF/admin/headImg.jsp</result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">editPwdPage,editPassword,userPage,addUser,deleteUser,editUser,headImgPage,setDefaultHeadImg</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 后台首页 -->
+        <action name="adminIndex_*" class="adminIndexAction" method="{1}">
+            <result name="success">/WEB-INF/admin/index.jsp</result>
+            <result name="mainPage">/WEB-INF/admin/main.jsp</result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">index.mainPage</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 后台商品管理 -->
+        <action name="adminProduct_*" class="adminProductAction" method="{1}">
+            <result name="productPage">/WEB-INF/admin/product.jsp</result>
+            <result name="productDetail">/WEB-INF/admin/info.jsp</result>
+            <result name="productComment">/WEB-INF/admin/comment.jsp</result>
+            <result name="deleteComment" type="redirectAction">
+                <param name="actionName">adminProduct_productComment.action</param>
+                <param name="pid">${model.pid}</param>
+                <param name="pc">1</param>
+            </result>
+            <result name="productEdit">/WEB-INF/admin/edit.jsp</result>
+            <result name="productDown" type="redirectAction">
+                <param name="actionName">adminProduct_productPage.action</param>
+                <param name="dflag">1</param>
+            </result>
+            <result name="addPage">/WEB-INF/admin/add.jsp</result>
+            <result name="downPage">/WEB-INF/admin/shelf.jsp</result>
+            <result name="productUp" type="redirectAction">
+                <param name="actionName">adminProduct_downPage.action</param>
+                <param name="uflag">1</param>
+            </result>
+            <result name="productAdd" type="redirectAction">
+                <param name="actionName">adminProduct_productPage.action</param>
+                <param name="aflag">1</param>
+            </result>
+            <result name="addFail" type="redirectAction">
+                <param name="failFlag">0</param>
+            </result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">productPage,productDetail,productComment,deleteComment,productEdit,productDown,addPage,downPage,productUp,productAdd,findCategorySecond,editInfo,editImg,editShow,editDetail,deleteShow,deleteDetail</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 后台订单管理 -->
+        <action name="adminOrder_*" class="adminOrderAction" method="{1}">
+            <result name="orderPage">/WEB-INF/admin/order.jsp</result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">orderPage,sendGoods</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 后台轮播图管理 -->
+        <action name="adminSlide_*" class="adminSlideAction" method="{1}">
+            <result name="slidePage">/WEB-INF/admin/slide.jsp</result>
+            <result name="slideEdit" type="redirectAction">
+                <param name="actionName">adminSlide_slidePage.action</param>
+                <param name="sflag">1</param>
+            </result>
+            <result name="slideEditFail" type="redirectAction">
+                <param name="actionName">adminSlide_slidePage.action</param>
+                <param name="fflag">0</param>
+            </result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">slidePage,slideEdit</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 后台一级分类管理 -->
+        <action name="adminCategory_*" class="adminCategoryAction" method="{1}">
+            <result name="categoryPage">/WEB-INF/admin/category.jsp</result>
+            <result name="categoryAdd" type="redirectAction">
+                <param name="actionName">adminCategory_categoryPage.action</param>
+                <param name="content">${content}</param>
+            </result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">categoryPage,categoryEdit,categoryAdd,categoryDelete</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!-- 后台二级分类管理 -->
+        <action name="adminCategorySecond_*" class="adminCategorySecondAction"  method="{1}">
+            <result name="categorySecondPage">/WEB-INF/admin/categorySecond.jsp</result>
+            <interceptor-ref name="adminInterceptor">
+                <param name="includeMethods">categorySecondPage,categorySecondAdd,categorySecondEdit,categorySecondDelete</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        
+    </package>
+</struts>

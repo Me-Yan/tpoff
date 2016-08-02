@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-26 1:05:03 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.slideimg.vo.SlideImg" table="t_slideimgs">
+        <id name="sid" type="java.lang.Integer">
+            <column name="sid" />
+            <generator class="native" />
+        </id>
+        <property name="spath" type="java.lang.String">
+            <column name="spath" />
+        </property>
+        <many-to-one name="product" class="cn.me.tpoff.product.vo.Product" fetch="join" lazy="false">
+            <column name="pid" />
+        </many-to-one>
+        <property name="flag" type="java.lang.Integer">
+            <column name="flag" />
+        </property>
+    </class>
+</hibernate-mapping>

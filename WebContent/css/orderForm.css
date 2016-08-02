@@ -1,0 +1,496 @@
+@charset "utf-8";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	list-style: none;
+	font-size: 12px; 
+	background-color: #EDEDED;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+button input {
+	outline: none;
+}
+/*消除浮动造成的影响*/
+.clearBoth {
+	clear: both;
+}
+
+/*顶部一行*/
+.header {
+	width: 100%;
+	margin: 0 auto;
+	height: 150px;
+	box-shadow: 0 0 10px rgba(9, 2, 4, .12);
+	background: url(../images/system/topstatus.png) repeat-x;
+}
+.headerTop {
+	width: 100%;
+}
+/*顶部列表*/
+.headerNav {
+    width: 100%;
+    border-bottom: 1px solid #eaeaea;
+}
+.topNav {
+	width: 1200px;
+	height: 17px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin: 0 auto;
+}
+/*欢迎标语*/
+.topNavWel {
+	float: left;
+	margin-left: 10px;
+	color: #878787;
+}
+/*登录注册*/
+.topNavLogin {
+	float: left;
+	margin-left: 40px;
+	list-style: none;
+}
+.topNavLogin li {	
+	float: left;
+}
+.topNavLogin li a {
+	display: inline-block;
+	width: 70px;
+	text-align: center;
+	color: #E14041;
+}
+.topNavLoginLiA {
+	border-right: 1px #878787 solid;
+}
+/*快捷链接*/
+.topNavEntry {
+	float: right;
+	list-style: none;
+}
+.topNavEntry li {
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+.topNavEntryS {
+	border-right: 1px #878787 solid;
+}
+.topNavEntry li a {
+	display: inline-block;
+	color: #878787;
+}
+.topNavEntryA {
+	border-right: 1px #878787 solid;
+}
+/*图片logo区域*/
+.status {
+	width: 1200px;
+	margin: 0 auto;
+	height: 86px;
+	margin-top: 20px;
+}
+.logo {
+	height: 62px;
+	float: left;
+	display: inline-block;
+}
+.logo img {
+	height: 62px;
+}
+.cartImg {
+	height: 86px;
+	float: right;
+}
+.cartImg img {
+	height: 86px;
+}
+/*弹窗部分、添加地址*/
+.mask {
+	display: none;
+	width: 100%;
+	height: 190%;
+	position: absolute;
+	top: 0px;
+	z-index: 99;
+	background-color: #ccc;
+	opacity: 0.3;
+}
+.addPop {
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	z-index: 100;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #ccc;
+	border: 1px solid #ccc;
+}
+.popTitle {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 15px;
+	border-bottom: 1px solid #ccc;
+	font-size: 18px;
+	background-color: #E8E8E8;
+}
+.popup {
+	margin-top: 20px;
+	padding-right: 70px;
+}
+.popup p {
+	margin-top: 30px;
+}
+.popup span {
+	display: inline-block;
+	padding: 10px 0px;
+	font-size: 17px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 50px;
+}
+.popup input {
+	padding: 5px 0;
+	height: 20px;
+	line-height: 20px;
+	width: 300px;
+	border: 1px solid #ccc;
+	padding-left: 10px;
+}
+.popup input:focus {
+	border: 1px solid #1E90FF;
+}
+.popEdit {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #e14041;
+	font-size: 17px;
+	margin-left: 200px;
+	color: #fff;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+.popEdit a {
+	cursor: pointer;
+	display: block;
+}
+.close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: #ccc;
+	cursor: pointer;
+}
+
+
+
+/*中间内容部分*/
+.center {
+	width: 100%;
+	background-color: #ededed;
+}
+.orderForm {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+	margin-top: 15px;
+}
+.title {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #222;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	box-shadow: 2px 2px 2px #ccc;
+}
+.addAddr {
+	margin-top: 5px;
+	height: 50px;
+	width: 100%;
+}
+.addAddr a {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	background-color: #E14041;
+	line-height: 40px;
+	text-align: center;
+	float: right;
+	position: relative;
+	top: 5px;
+	margin-right: 10px;
+	color: #fff;
+	font-size: 15px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+
+/*显示地址选项列表*/
+.address {
+	width: 100%;
+}
+.addrList {
+	width: 100%;
+	border-top: 1px solid #ddd;
+	padding-bottom: 30px;
+}
+.choose {
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	padding-left: 50px;
+	font-size: 16px;
+}
+.list {
+	width: 300px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-left: 70px;
+	margin-top: 20px;
+}
+.list:hover {
+	border: 1px solid #e14041;
+	cursor: pointer;
+}
+.chooseList {
+	border: 1px solid #e14041;
+	background: url(../images/system/choose.png);
+}
+.user {
+	border-bottom: 1px solid #eee;
+	height: 40px;
+	margin: 0 10px;
+}
+.name {
+	display: inline-block;
+	width: 100px;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.phone {
+	height: 40px;
+	width: 100px;
+	line-height: 40px;
+	text-align: center;
+	float: right;
+	margin-right: 20px;
+}
+.addr {
+	padding: 15px;
+	height: 35px;
+}
+/*展示所购买商品详情*/
+.details {
+	width: 100%;
+	margin-top: 15px;
+}
+.topTitle {
+	width: 100%;
+	border-bottom: 1px solid #ededed;
+	background-color: #fafafa;
+	line-height: 45px;
+	font-size: 15px;
+	margin-bottom: -9px;
+}
+.goods {
+	display: inline-block;
+	width: 350px;
+	padding-left: 20px;
+	color: #333;
+	line-height: 45px;
+	text-align: center;
+}
+.price {
+	display: inline-block;
+	width: 170px;
+	text-align: center;
+	margin-left: 25px;
+	color: #333;
+	line-height: 45px;
+	margin-left: 20px;
+}
+.number {
+	display: inline-block;
+	text-align: center;
+	margin-left: 70px;
+	color: #333;
+	line-height: 45px;
+	width: 200px;
+}
+.total {
+	display: inline-block;
+	text-align: center;
+	margin-left: 70px;
+	color: #333;
+	line-height: 45px;
+	width: 170px;
+}
+/*展示具体商品*/
+.productList {
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 10px 0;
+	line-height: 100px;
+	margin-top: 10px;
+	float: left;
+}
+.proImg {
+	margin-left: 30px;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+.proImg img {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #eee;
+}
+.proName {
+	margin-left: 40px;
+	width: 200px;
+	float: left;
+	font-size: 0;
+}
+.proName:before {
+    display: inline-block;
+    content: '.';
+    vertical-align: middle; 
+    height: 100%;
+}
+.proName a {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 19px;
+	width: 200px;
+	font-size: 16px;
+	color: #333;	
+}
+.proPrice {
+	width: 170px;
+	text-align: center;
+	margin-left: 25px;
+	float: left;
+	font-size: 16px;
+	color: #333;
+}
+.proNumber {
+	width: 200px;
+	text-align: center;
+	margin-left: 90px;
+	font-size: 14px;
+	color: #333;
+	float: left;
+}
+.dw {
+	font-size: 14px;
+	display: inline-block;
+	text-align: left;
+	width: 50px;
+	margin-left: 10px;
+}
+.proTotal {
+	width: 170px;
+	color: #e04040;
+	text-align: center;
+	font-size: 17px;
+	float: left;
+	margin-left: 55px;
+}
+
+/*费用详情*/
+.cost {
+	width: 100%;
+	background-color: #ededed;
+	padding-bottom: 20px;
+}
+.costRight {
+	float: right;
+	margin-right: 50px;
+	text-align: right;
+}
+.costRight>span {
+	display: block;
+	height: 30px;
+	font-size: 18px;
+	margin-top: 20px;
+}
+.conCart {
+	width: 100%;
+}
+.conRight {
+	float: right;
+	font-size: 20px;
+	padding: 5px;
+}
+.subtotal span {
+	font-size: 25px;
+	color: #e14041;
+}
+.conClick {
+	display: inline-block;
+	margin-left: 100px;
+	background-color: #E14041;
+}
+.conClick a {
+	display: inline-block;
+	padding: 5px 10px;
+	color: #fff;
+	cursor: pointer;
+}
+
+/*底部*/
+.footer {
+	width: 1200px;
+	margin: 0px auto;
+}
+.aboutUs {
+	padding-top: 50px;
+	border-top: 1px solid #ccc;
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+.aboutUs ul {
+	list-style: none;
+	width: 404px;
+	margin: 0 auto;
+	height: 17px;
+}
+.aboutUs ul li {
+	float: left;
+	width: 100px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+}
+.aboutUs ul li a {
+	color: #333;0
+}
+.fi {
+	border-right: 1px #000 solid;
+}
+.aboutUs p {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.toTop {
+	color:#696969;
+	display:block;
+}

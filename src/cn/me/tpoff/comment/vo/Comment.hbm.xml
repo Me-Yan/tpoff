@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-30 2:12:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.comment.vo.Comment" table="t_pcomments">
+        <id name="pcid" type="java.lang.Integer">
+            <column name="pcid" />
+            <generator class="native" />
+        </id>
+        <property name="content" type="java.lang.String">
+            <column name="content" />
+        </property>
+        <property name="username">
+            <column name="username"></column>
+        </property>
+        <property name="cdate" type="java.util.Date">
+            <column name="cdate" />
+        </property>
+        <many-to-one name="product" class="cn.me.tpoff.product.vo.Product" fetch="join" lazy="false">
+            <column name="pid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

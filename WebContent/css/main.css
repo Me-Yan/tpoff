@@ -1,0 +1,108 @@
+@charset "utf-8";
+/*样品展示*/
+.bodyfloor {
+	width: 100%;
+	background-color: #EDEDED;
+	padding-top: 20px;
+	margin-bottom: 0px;
+}
+/*第一部分*/
+.bodyfloor1 {
+	width: 1200px;
+	margin: 20px auto;
+	height: 452px;
+}
+/*左边*/
+.leftTop {
+	background-color: #E33A3C;
+	padding: 8px 10px;
+	height: 25px;
+}
+.topTitle {
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+}
+.bottomMore {
+	float: right;
+	height: 25px;
+	line-height: 25px;
+}
+.bottomMore a {
+	display: inline-block;
+	height: 25px;
+	color: #fff;
+}
+.leftBottom {
+	margin-top: 10px;
+}
+.leftBottom a img {
+	height: 390px;
+	width: 355px;
+}
+/*右边*/
+.rightImg {
+	float: left;
+	border-bottom: 1px solid #dfdfdf;
+	border-right: 1px solid #dfdfdf;
+	overflow: hidden;
+	width:199px;
+	height: 220px;
+}
+.rightImg a {
+	display: block;
+	height: 220px;
+	width: 199px;
+}
+.rightImg a img {
+	height: 220px;
+	width: 199px;
+	overflow: hidden;
+}
+.rightIntroduce {
+	height: 0px;
+	position: relative;
+	top: -220px;
+}
+.rightIntroduce p {
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+	overflow: hidden;
+}
+/*回到顶部*/
+.toTop {
+	color:#696969;
+	display:block;
+}
+/*固定搜索栏*/
+.posFixed {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	background-color: #fff;
+	display: none;
+}
+.pos {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+}
+.posLogo {
+	height: 62px;
+	float: left;
+}
+.posLogo a {
+	display: block;
+}
+.posLogo a img {
+	height: 62px;
+}
+.posSearch {
+	float: right;
+	padding-top: 5px;
+	margin-right: 100px;
+}

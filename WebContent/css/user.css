@@ -1,0 +1,268 @@
+@charset 'utf-8';
+
+
+
+.center {
+	width: 100%;
+}
+.infomation {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #ededed;
+}
+.route {
+	width: 100%;
+	padding: 15px 0;
+	font-size: 14px;
+}
+.route a {
+	color: #666;
+}
+.route i {
+	width: 7px;
+	height: 14px;
+	margin: 0 8px;
+	color: #666;
+}
+.left {
+	width: 250px;
+	margin-right: 15px;
+	float: left;
+	background-color: #fff;
+}
+.title {
+	background-color: #e14041;
+}
+.title a {
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+}
+.list li {
+	height: 43px;
+	line-height: 43px;
+	text-align: center;
+	font-size: 15px;
+	border-bottom: 1px #E1E1E1 solid;
+}
+.list li a {
+	display: block;
+	height: 43px;
+	width: 100%;
+	color: #666;
+}
+.list li a:hover {
+	background-color: #e14041;
+	color: #fff;
+}
+/*右边部分*/
+.right {
+	float: right;
+	width: 925px;
+	background-color: #fff;
+}
+.userTitle {
+	height: 45px;
+	line-height: 45px;
+	padding-left: 30px;
+	font-size: 16px;
+	box-shadow: 2px 2px 2px #ededed;
+}
+.userInfo {
+	padding: 20px 25px;
+}
+.inner {
+	width: 100%;
+	padding-top: 30px;
+}
+.info {
+	float: left;
+	width: 435px;
+	border-right: 1px solid #ededed;
+	padding-top: 50px;
+}
+.info p {
+	width: 100%;
+	height: 40px;
+	font-size: 15px;
+}
+.editInfo {
+	line-height: 40px;
+	text-align: center;
+	margin-top: 20px;
+}
+.editInfo a {
+	display: inline-block;
+	background-color: #e14041;
+	color: #fff;
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.info p .same {
+	margin-left: 100px;
+}
+.infoImg {
+	float: right;
+	width: 439px;
+}
+.imgTitle {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	background-color: #fafafa;
+}
+.userImg {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #ededed;
+	margin-top: 10px;
+	margin-left: 120px;
+}
+.userImg img {
+	width: 200px;
+	height: 200px;
+}
+.editImg {
+	font-size: 15px;
+	width: 80px;
+	height: 40px;
+	background-color: #e14041;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 27px;
+	margin-left: 180px;
+}
+
+/*弹窗*/
+.popup {
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	z-index: 99;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #ccc;
+	border: 1px solid #ccc;
+}
+.popTitle {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 15px;
+	border-bottom: 1px solid #ccc;
+	font-size: 18px;
+	background-color: #E8E8E8;
+}
+.popForm {
+	padding: 20px 30px 20px 100px;
+	font-size: 18px;
+}
+.username input, .realname input, .province input {
+	padding: 5px 0px 5px 10px;
+	height: 25px;
+	line-height: 25px;
+	width: 200px;
+	text-align: left;
+	font-size: 15px;
+	border: 1px solid #ccc;
+}
+input:focus {
+	border: 1px solid #1E90FF;
+}
+#infoForm p {
+	padding: 8px 0;
+}
+.sex input {
+	margin-left: 40px;
+}
+
+.confirm a {
+	display: block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #e14041;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+	padding: 5px 0;
+	margin-top: 10px;
+	margin-left: 130px;
+	cursor: pointer;
+}
+
+/*修改头像*/
+.imgPop {
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	z-index: 99;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #ccc;
+	border: 1px solid #ccc;
+}
+.showImg {
+	height: 200px;
+	width: 200px;
+	padding: 50px 150px;
+	border-bottom: 1px solid #ccc;
+}
+.showImg img {
+	height: 200px;
+	width: 200px;
+}
+.filename {
+	padding: 20px;
+}
+.imgBtn {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #e14041;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+	padding: 5px 0;
+	margin-top: 10px;
+	margin-left: 130px;
+	cursor: pointer;
+}
+
+/*关闭按钮*/
+.close {
+	position: absolute;
+	right: 5px;
+	top: 1px;
+	color: #ccc;
+	cursor: pointer;
+}
+/*遮罩*/
+.mask {
+	display: none;
+	width: 100%;
+	height: 190%;
+	position: absolute;
+	top: 0px;
+	z-index: 50;
+	background-color: #ccc;
+	opacity: 0.3;
+}
+.state {
+	display: inline-block;
+	width: 100px;
+	color: #e14041;
+	margin-left: 10px;
+	font-size: 12px;
+}

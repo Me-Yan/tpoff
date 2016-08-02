@@ -1,0 +1,103 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #404D5B;
+	background-image: url(../../images/system/bg.png);
+}
+.clearBoth {
+	clear: both;
+}
+
+/*内容*/
+.logo {
+	width: 100%;
+	margin-top: 70px;
+}
+.tip {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.tip div {
+    display: none;
+    width: 335px;
+    padding: 10px;
+    background-color: #FFE5E6;
+    color: #FA5354;
+    border-radius: 5px;
+    position: absolute;
+    left: 223px;
+    top: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.logoImg {
+	margin: 0 auto;
+	width: 800px;
+	text-align: center;
+}
+.logoImg img {
+	width: 226px;
+	height: 83px;
+}
+.sign {
+	width: 100%;
+	margin-top: 100px;
+}
+.inner {
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+p input:focus {
+	border: 1px solid #3A4147;
+	box-shadow: 0px 0px 5px 0px #337AB7;
+}
+p .name {
+	font-size: 14px;
+	border: 1px solid #3A4147;
+	width: 300px;
+	border-radius: 5px;
+	color: #FFF;
+	padding: 15px 10px 15px 45px;
+	background-color: #3A4147;
+	border: 1px solid #3A4147;
+	background: #3a4147 url('../../images/system/name.png') no-repeat;
+}
+p .password {
+	font-size: 14px;
+	margin-top: 30px;
+	border: 1px solid #3A4147;
+	width: 300px;
+	border-radius: 5px;
+	color: #FFF;
+	padding: 15px 10px 15px 45px;
+	background-color: #3A4147;
+	border: 1px solid #3A4147;
+	background: #3a4147 url('../../images/system/password.png') no-repeat;
+}
+.btn {
+	display: inline-block;
+	padding: 10px;
+	width: 335px;
+	color: #000;
+	background-color: #F0EDEE;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 30px;
+}
+.btn:hover {
+	background-color: #ddd;
+}

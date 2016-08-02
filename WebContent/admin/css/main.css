@@ -1,0 +1,100 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #fff;
+}
+.clearBoth {
+	clear: both;
+}
+
+/* 最新动态 */
+.latest {
+	padding: 10px 20px 0px 20px;
+	min-width: 400px;
+}
+.statusTitle, .registerTitle, .dealTitle {
+	background-color: #F0F0F0;
+	height: 36px;
+	line-height: 36px;
+	text-align: left;
+	border: 1px solid #CCCCCC;
+}
+.latestStatus span, .registerTitle span, .dealTitle span {
+	margin-left: 20px;
+	font-weight: bold;
+}
+.statusContent, .registerContent, .dealContent {
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+}
+.statusContent>li {
+	float: left;
+	width: 25%;
+	height: 106px;
+}
+.statusContent>li ul {
+	margin: 30px 0;
+}
+.statusContent>li ul li {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.statusContent>li ul>li:first-child {
+	color: #999;
+	font-weight: bold;
+	font-size: 30px;
+}
+.statusContent>li ul>li:last-child {
+	margin-top: 5px;
+	color: #555;
+	font-weight: normal;
+	font-size: 20px;
+}
+/*最近注册用户*/
+.registerContent ul>li ul li {
+	float: left;
+	width: 25%;
+}
+.registerContent ul>li:first-child ul li {
+	font-size: 16px;
+	font-weight: bold
+}
+.registerContent ul>li {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+/*最近交易情况*/
+.dealContent ul>li ul li {
+	float: left;
+	width: 25%;
+}
+.dealContent ul>li:first-child ul li {
+	font-size: 16px;
+	font-weight: bold;
+}
+.dealContent ul>li {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+.latestRegister, .latestDeal {
+	margin-top: 20px;
+}
+.latestDeal {
+	margin-bottom: 30px;
+}

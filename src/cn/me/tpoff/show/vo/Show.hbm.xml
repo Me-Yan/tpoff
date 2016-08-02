@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-29 14:59:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.show.vo.Show" table="t_pshows">
+        <id name="sid" type="java.lang.Integer">
+            <column name="sid" />
+            <generator class="native" />
+        </id>
+        <property name="pspath" type="java.lang.String">
+            <column name="pspath" />
+        </property>
+        <many-to-one name="product" class="cn.me.tpoff.product.vo.Product" fetch="join" lazy="false">
+            <column name="pid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

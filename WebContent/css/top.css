@@ -1,0 +1,276 @@
+@charset "utf-8";
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	list-style: none;
+	font-size: 12px; 
+	background-color: #EDEDED;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+button input {
+	outline: none;
+}
+button {
+	border: none;
+}
+/*消除浮动造成的影响*/
+.clearBoth {
+	clear: both;
+}
+.header {
+	width: 100%;
+	margin: 0 auto;
+}
+.headerTop {
+	width: 100%;
+	background-color: #F2F2F2;
+}
+/*顶部列表*/
+.topNav {
+	width: 1200px;
+	height: 17px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin: 0 auto;
+}
+/*欢迎标语*/
+.topNavWel {
+	float: left;
+	margin-left: 10px;
+	color: #878787;
+}
+/*登录注册*/
+.topNavLogin {
+	float: left;
+	margin-left: 40px;
+	list-style: none;
+}
+.topNavLogin li {	
+	float: left;
+}
+.topNavLogin li a {
+	display: inline-block;
+	color: #E14041;
+}
+.topNavLoginLiA {
+	border-right: 1px #878787 solid;
+	padding-right: 10px;
+}
+.ltwo {
+	padding-left: 10px;
+}
+/*快捷链接*/
+.topNavEntry {
+	float: right;
+	list-style: none;
+}
+.topNavEntry li {
+	float: left;
+	width: 100px;
+	text-align: center;
+}
+.topNavEntryS {
+	border-right: 1px #878787 solid;
+}
+.topNavEntry li a {
+	display: inline-block;
+	color: #878787;
+}
+.topNavEntryA {
+	border-right: 1px #878787 solid;
+}
+/*头部 搜索栏*/
+.headerBody {
+	background-color: #fff;
+	padding-bottom: 20px;
+}
+.bodySearch {
+	width: 1200px;
+	height: 62px;
+	padding-top: 20px;
+	margin: 0 auto;
+}
+.logo {
+	float: left;
+}
+.logo a img {
+	height: 62px;
+}
+.searchKey {
+	float: left;
+	margin-left: 100px;
+	padding-top: 5px;
+}
+.keywords {
+	width: 450px;
+	height: 30px;
+	border: 1px #CCCCCC solid;
+	line-height: 21px;
+	padding: 9px 10px;
+}
+/*搜索图标*/
+.searchButton {
+	display: inline-block;
+	width: 33px;
+	height: 36px;
+	position: relative;
+	top: 7px;
+	left: -50px;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+}
+/*购物车数量显示*/
+.mycart {
+	margin-top: 6px;
+	border: 1px #EFEFEF solid;
+	float: left;
+	margin-left: 70px;
+	display: inline-block;
+	height: 52px;
+	position: relative;
+	top: -3px;
+}
+.mycart i {
+	margin-left: 10px;
+}
+.mycart a {
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 17px;
+	color: #666666;
+	margin-top: 0px;
+	height: 52px;
+	text-align: center;
+	line-height: 52px;
+}
+.cart span {
+	display: inline-block;
+	width: 52px;
+	height: 54px;
+	background-color: #FA9600; 
+	margin-top: 6px;
+	line-height: 54px;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+	position: relative;
+	top: -3px;
+}
+/*菜单分类*/
+.menuTop {
+	background-color: #3C3C3C;
+	margin-top: 0px;
+	height: 38px;
+}
+.headerNav {
+	width: 1200px;
+	height: 38px;
+	margin: 0 auto;
+	list-style: none;
+}
+.headerNav li {
+	float: left;
+	padding: 0 60px;
+	text-align: center;
+	line-height: 38px;
+	color: #fff;
+	font-size: 16px;
+}
+.headerNav li a {
+	color: #fff;
+	display: block;
+}
+.category {
+	cursor: pointer;
+	height: 37px;
+	background-color: #D83A3B;
+	border-bottom: 1px #B03A3B solid;
+}
+/*分类列表*/
+.headerBottom {
+	position: absolute;
+	width: 100%;
+}
+.menuList {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+.menuListUl {
+	list-style: none;
+	display: inline-block;
+	background-color: #fff;
+	position: absolute;
+	z-index: 30;
+	height: 342px;
+}
+.menuListUl li {
+	width: 208px;
+	font-size: 14px;
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	border-bottom: 1px #dedede solid;
+}
+.menuListUl li a:hover {
+	background-color: #D83A3B;
+	color: #fff;
+}
+.menuListUl li a {
+	color: #555;
+	display: block;
+}
+/*分类详情*/
+.menuDetailList {
+	float: left;
+	position: absolute;
+	z-index: 30;
+}
+.menuDetail {
+	padding: 15px 20px;
+	display: none;
+	list-style: none;
+	width: 500px;
+	background-color: #fff;
+	position: absolute; 
+	border: 1px solid #ddd;
+	display: none;
+	border-left: 2px solid #e14041;
+}
+.menuDetail li {
+	height: 38px;
+	width: 100px;
+	line-height: 38px;
+	text-align: center;
+	font-size: 14px;
+	float: left;
+}
+.menuDetail li a {
+	color: #000;
+	display: block;
+}
+.menuDetail li a:hover {
+	background-color: #D83A3B;
+	color: #fff;
+}
+/*绝对定位右侧*/
+.menuRight {
+	list-style: none;
+	display: inline-block;
+	position: absolute;
+	z-index: 30;
+	right: 0px;
+}
+.menuRight li a img {
+	height: 169px;
+}

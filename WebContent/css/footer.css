@@ -1,0 +1,92 @@
+@charset "utf-8";
+/*个人企业信息*/
+.footer {
+	width: 100%;
+	background-color: #EDEDED;
+	margin-top: 100px;
+}
+.footerPromise {
+	border-top: 1px solid #D3D3D3;
+	padding-top: 50px;
+	width: 1200px;
+	margin: 50px auto;
+}
+.promise {
+	list-style: none;
+	height: 51px;
+}
+.promise li {
+	float: left;
+	width: 297px;
+	height: 51px;
+	border-right: 1px #DCDCDC solid;
+}
+.f1 {
+	float: left;
+}
+.promise li img {
+	margin: 0 18px 0 80px;
+}
+.promise li span {
+	font-size: 14px;
+	line-height: 19px;
+	color: #333;
+}
+/*购物指南*/
+.shopHelp {
+	margin-top: 70px;
+	border-top: 1px #DCDCDC solid;
+}
+.shopUl {
+	list-style: none;
+	width: 100%;
+	margin: 50px auto;
+	height: 50px;
+}
+.shopUl>li {
+	float: left;
+	margin-left: 40px;
+}
+.helpUl {
+	list-style: none;
+}
+.helpUl li {
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.helpUl li span {
+	font-weight: bold;
+	font-size: 17px;
+}
+.helpUl li a {
+	color: #333;
+}
+/*关于我们*/
+.aboutUs {
+	padding-top: 50px;
+}
+.aboutUs ul {
+	list-style: none;
+	width: 404px;
+	margin: 0 auto;
+	height: 17px;
+}
+.aboutUs ul li {
+	float: left;
+	width: 100px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+}
+.aboutUs ul li a {
+	color: #333;0
+}
+.fi {
+	border-right: 1px #000 solid;
+}
+.aboutUs p {
+	text-align: center;
+	padding-top: 20px;
+}

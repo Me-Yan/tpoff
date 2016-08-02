@@ -1,0 +1,212 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	list-style: none;
+	font-size: 12px; 
+}
+button input {
+	outline: none;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+.header {
+	width: 100%;
+	padding: 20px 0;
+}
+.headerLogo {
+	width: 1200px;
+	margin: 0 auto;
+}
+.headerLogo a {
+	display: inline-block;
+	padding-right: 20px;
+	border-right: 1px #E1E3DF solid;
+}
+.headerLogo a img {
+	height: 62px;
+}
+.headerLogo span {
+	color: #686868;
+	display: inline-block;
+	padding-left: 20px;
+	font-size: 19px;
+	position: relative;
+	top: -15px;
+	font-weight: bold;
+}
+.mainLogin {
+	padding: 70px 0;
+	background-color: #fdcb31;
+}
+.login {
+	width: 990px;
+	height: 420px;
+	margin: 0 auto;
+}
+.loginImg {
+	width: 540px;
+	height: 410px;
+	float: left;
+}
+.loginForm {
+	display: block;
+}
+/*登录信息*/
+.loginBox {
+	width: 300px;
+	background-color: #fff;
+	padding: 25px 50px;
+	margin-top: 25px;
+	float: right;
+}
+.loginBox h2 {
+	font-size: 18px;
+	color: #535353;
+	font-weight: normal;
+	padding-bottom: 20px;
+}
+.loginError {
+	background-color: #ffe5e6;
+	color: #FA5354;
+	padding: 0 10px;
+	line-height: 24px;
+	text-align: center;
+	margin-top: 3px;
+}
+label {
+	display: block;
+}
+.loginList {
+	margin-top: 12px;
+	border: 1px solid #c0c0c0;
+	height: 43px;
+	width: 298px;
+	overflow: hidden;
+	background-color: #fff;
+	position: relative;
+}
+.loginInput {
+	width: 245px;
+	height: 19px;
+	line-height: 19px;
+	padding: 11px 6px 11px 45px;
+	font-size: 14px;
+	border: none;
+}
+.loginList i {
+	position: absolute;
+	width: 45px;
+	height: 43px;
+	line-height: 43px;
+	text-align: center;
+	left: 0;
+	top: 0px;
+	font-size: 24px;
+	color: #cfcfd4;
+}
+.loginCode {
+	margin-top: 20px;
+	height: 43px;
+	width: 298px;
+	background-color: #fff;
+}
+.codeBox {
+	float: left;
+}
+.codeBox span {
+	font-size: 15px;
+}
+.codeBox input {
+	height: 30px;
+	width: 70px;
+	line-height: 30px;
+	padding: 2px 3px;
+}
+.codeImg {
+	float: left;
+	height: 35px;
+	width: 100px;
+	margin-left: 5px;
+}
+.codeImg img {
+	height: 35px;
+	width: 100px;
+	display: inline-block;
+	border: 1px solid #ccc;
+}
+.loginCode a {
+	display: inline-block;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	width: 48px;
+	margin-left: 5px;
+	position: relative;
+	top: 3px;
+}
+.loginBtn {
+	margin-top: 15px;
+}
+.loginBtn a {
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	background-color: #FA5354;
+	font-size: 16px;
+	color: #fff;
+	height: 43px;
+	line-height: 43px;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+}
+.loginRegister {
+	margin-top: 12px;
+}
+.loginRegister a {
+	color: #457ea9;
+}
+.fp {
+	float: right;
+}
+/*关于我们*/
+.footer {
+	width: 1200px;
+	margin: 0px auto;
+}
+.aboutUs {
+	padding-top: 50px;
+}
+.aboutUs ul {
+	list-style: none;
+	width: 404px;
+	margin: 0 auto;
+	height: 17px;
+}
+.aboutUs ul li {
+	float: left;
+	width: 100px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+}
+.aboutUs ul li a {
+	color: #333;0
+}
+.fi {
+	border-right: 1px #000 solid;
+}
+.aboutUs p {
+	text-align: center;
+	padding-top: 20px;
+}

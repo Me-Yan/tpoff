@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 9:37:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.orderitem.vo.OrderItem" table="t_orderitems">
+        <id name="omid" type="java.lang.Integer">
+            <column name="omid" />
+            <generator class="native" />
+        </id>
+        <property name="subcount" type="java.lang.Integer">
+            <column name="subcount" />
+        </property>
+        <property name="subtotal" type="java.lang.Double">
+            <column name="subtotal" />
+        </property>
+        <many-to-one name="product" class="cn.me.tpoff.product.vo.Product" fetch="join" lazy="false">
+            <column name="pid" />
+        </many-to-one>
+        <many-to-one name="order" class="cn.me.tpoff.order.vo.Order" fetch="join">
+            <column name="oid" />
+        </many-to-one>
+        <property name="state" type="java.lang.Integer">
+            <column name="state"></column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-26 1:05:03 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.product.vo.Product" table="t_products">
+        <id name="pid" type="java.lang.Integer">
+            <column name="pid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="categorySecond" class="cn.me.tpoff.categorysecond.vo.CategorySecond" fetch="join" lazy="false">
+            <column name="csid" />
+        </many-to-one>
+        <property name="pname" type="java.lang.String">
+            <column name="pname" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" />
+        </property>
+        <property name="least" type="java.lang.Integer">
+            <column name="least" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="unit" />
+        </property>
+        <property name="function" type="java.lang.String" length="350">
+            <column name="function" />
+        </property>
+        <property name="pdate" type="java.util.Date">
+            <column name="pdate" />
+        </property>
+        <property name="salecount" type="java.lang.Integer">
+            <column name="salecount" />
+        </property>
+        <property name="pimg" type="java.lang.String">
+            <column name="pimg" />
+        </property>
+        <property name="ucount" type="java.lang.Integer">
+            <column name="ucount" />
+        </property>
+        <property name="state">
+            <column name="state" />
+        </property>
+    </class>
+</hibernate-mapping>

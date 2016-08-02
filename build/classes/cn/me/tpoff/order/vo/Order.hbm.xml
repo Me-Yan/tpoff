@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-5 9:40:13 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.order.vo.Order" table="t_orders">
+        <id name="oid" type="java.lang.Integer">
+            <column name="oid" />
+            <generator class="native" />
+        </id>
+        <property name="total" type="java.lang.Double">
+            <column name="total" />
+        </property>
+        <property name="count" type="java.lang.Integer">
+            <column name="count" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" />
+        </property>
+        <property name="odate" type="java.util.Date">
+            <column name="odate" />
+        </property>
+        <property name="number" type="java.lang.String">
+            <column name="number" />
+        </property>
+        <many-to-one name="user" class="cn.me.tpoff.user.vo.User" fetch="join" lazy="false">
+            <column name="uid" />
+        </many-to-one>
+        <property name="paytotal" type="java.lang.Double">
+            <column name="paytotal"></column>
+        </property>
+        <property name="addr" type="java.lang.String">
+            <column name="addr"></column>
+        </property>
+        <property name="receiver" type="java.lang.String">
+            <column name="receiver"></column>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone"></column>
+        </property>
+        <set name="orderItems" table="t_orderitems" inverse="false" lazy="false" order-by="omid" cascade="all" fetch="join">
+            <key>
+                <column name="oid" />
+            </key>
+            <one-to-many class="cn.me.tpoff.orderitem.vo.OrderItem" />
+        </set>
+        <property name="flag" type="java.lang.Integer">
+            <column name="flag"></column>
+        </property>
+    </class>
+</hibernate-mapping>

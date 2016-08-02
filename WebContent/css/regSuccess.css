@@ -1,0 +1,105 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	list-style: none;
+	font-size: 12px; 
+}
+button input {
+	outline: none
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+.header {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	box-shadow: 0 0 10px rgba(9, 2, 4, .12);
+}
+.headerLogo {
+	width: 1200px;
+	margin: 0 auto;
+}
+.headerLogo a {
+	display: inline-block;
+	padding-right: 20px;
+	border-right: 1px #E1E3DF solid;
+}
+.headerLogo a img {
+	height: 62px;
+}
+.headerLogo span {
+	color: #686868;
+	display: inline-block;
+	padding-left: 20px;
+	font-size: 19px;
+	position: relative;
+	top: -15px;
+	font-weight: bold;
+}
+
+/*中间部分------------------------------*/
+.center {
+	width: 100%;
+	background-color: #ededed;
+	padding-top: 10px;
+	height: 500px;
+	line-height: 500px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	font-size: 16px;
+}
+.center .time {
+	font-size: 20px;
+	margin-right: 3px;
+	color: #e14041;
+}
+.center a {
+	margin-left: 30px;
+	color: #1E90FF;
+}
+
+/*华丽的分割线-------------------------*/
+/*关于我们*/
+.footer {
+	width: 100%;
+	background-color: #fff;
+}
+.footerAbout {
+	width: 1200px;
+	margin: 0px auto;
+}
+.aboutUs {
+	padding-top: 50px;
+}
+.aboutUs ul {
+	list-style: none;
+	width: 404px;
+	margin: 0 auto;
+	height: 17px;
+}
+.aboutUs ul li {
+	float: left;
+	width: 100px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+}
+.aboutUs ul li a {
+	color: #333;0
+}
+.fi {
+	border-right: 1px #000 solid;
+}
+.aboutUs p {
+	text-align: center;
+	padding-top: 20px;
+}

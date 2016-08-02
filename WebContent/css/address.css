@@ -1,0 +1,273 @@
+@charset 'utf-8';
+
+
+
+.center {
+	width: 100%;
+}
+.address {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #ededed;
+}
+.route {
+	width: 100%;
+	padding: 15px 0;
+	font-size: 14px;
+}
+.route a {
+	color: #666;
+}
+.route i {
+	width: 7px;
+	height: 14px;
+	margin: 0 8px;
+	color: #666;
+}
+.left {
+	width: 250px;
+	margin-right: 15px;
+	float: left;
+	background-color: #fff;
+}
+.title {
+	background-color: #e14041;
+}
+.title a {
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+}
+.list li {
+	height: 43px;
+	line-height: 43px;
+	text-align: center;
+	font-size: 15px;
+	border-bottom: 1px #E1E1E1 solid;
+}
+.list li a {
+	display: block;
+	height: 43px;
+	width: 100%;
+	color: #666;
+}
+.list li a:hover {
+	background-color: #e14041;
+	color: #fff;
+}
+/*右边部分*/
+.right {
+	float: right;
+	width: 925px;
+	background-color: #fff;
+}
+.addressTitle {
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 30px;
+	font-size: 16px;
+	box-shadow: 2px 2px 2px #ededed;
+}
+.addrInfo {
+	padding: 20px 25px;
+}
+.addrTitle {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #dadada;
+	border-top: 1px solid #ededed;
+	margin-top: 20px;
+}
+.ad {
+	font-size: 15px;
+	display: block;
+	float: left;
+}
+.addrAeceiver {
+	width: 120px;
+}
+.addrPhone {
+	width: 120px;
+}
+.addrAddress {
+	width: 360px;
+}
+.addrOperate {
+	width: 140px;
+}
+.addrList {
+	width: 100%;
+	height: 60px;
+	padding: 10px 0;
+	font-size: 12px;
+	border-bottom: 1px solid #dadada;
+	color: #555;
+}
+.addrList td {
+	text-align: center;
+}
+.receiver {
+	height: 60px;
+	width: 120px;
+	line-height: 60px;
+}
+.phone {
+	height: 60px;
+	width: 120px;
+	line-height: 60px;
+}
+.addr {
+	width: 360px;
+	height: 60px;
+	line-height: 60px;
+}
+.operate {
+	height: 60px;
+	width: 130px;
+	line-height: 60px;
+}
+.operate a {
+	color: #3366CC;
+}
+.status {
+	height: 60px;
+	width: 130px;
+	line-height: 60px;
+}
+.one {
+	padding: 5px;
+	background-color: #ddd;
+	border: 1px solid #e14041;
+	border-radius: 5px;
+	color: #e14041;
+	display: none;
+}
+.two {
+	padding: 5px;
+	background-color: #e14041;
+	border: #e14041;
+	border-radius: 5px;
+	display: none;
+}
+.two a {
+	color: #fff;
+}
+.add {
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	margin-top: 40px;
+	vertical-align: middle;
+}
+.add a {
+	display: block;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+	background-color: #e14041;
+	margin-left: 370px;
+	border-radius: 5px;
+}
+.addAddr {
+	cursor: pointer;
+}
+
+
+/*弹窗*/
+.editBtn {
+	cursor: pointer;
+}
+.mask {
+	display: none;
+	width: 100%;
+	height: 190%;
+	position: absolute;
+	top: 0px;
+	z-index: 50;
+	background-color: #ccc;
+	opacity: 0.3;
+}
+.popTitle {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 15px;
+	border-bottom: 1px solid #ccc;
+	font-size: 18px;
+	background-color: #E8E8E8;
+}
+.editPop {
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	z-index: 100;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #ccc;
+	border: 1px solid #ccc;
+}
+.addPop {
+	display: none;
+	position: fixed;
+	background-color: #fff;
+	z-index: 100;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #ccc;
+	border: 1px solid #ccc;
+}
+.popup {
+	margin-top: 20px;
+	padding-right: 70px;
+}
+.popup p {
+	margin-top: 30px;
+}
+.popup span {
+	display: inline-block;
+	padding: 10px 0px;
+	font-size: 17px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 50px;
+}
+.popup input {
+	padding: 5px 0;
+	height: 20px;
+	line-height: 20px;
+	width: 300px;
+	border: 1px solid #ccc;
+	padding-left: 10px;
+}
+.popup input:focus {
+	border: 1px solid #1E90FF;
+}
+.popEdit {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #e14041;
+	font-size: 17px;
+	margin-left: 200px;
+	color: #fff;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+.popEdit a {
+	cursor: pointer;
+	display: block;
+}
+.close {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: #ccc;
+	cursor: pointer;
+}

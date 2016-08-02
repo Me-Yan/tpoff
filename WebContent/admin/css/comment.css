@@ -1,0 +1,131 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0 20px;
+	color: #404D5B;
+	background-color: #f9f7f6;
+	margin-bottom: 100px;
+}
+.clearBoth {
+	clear: both;
+}
+
+/*内容*/
+.comment {	
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	padding: 0px 20px;
+}
+/*标题*/
+.title {
+	border-bottom: 1px solid #ccc;
+}
+.title li {
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.title li:nth-child(1) {
+	width: 10%;
+}
+.title li:nth-child(2) {
+	width: 40%;
+}
+.title li:nth-child(3) {
+	width: 20%;
+}
+.title li:nth-child(4) {
+	width: 15%;
+}
+.title li:nth-child(5) {
+	width: 15%;
+}
+/*具体内容*/
+.content li {
+	border-bottom: 1px solid #ccc;
+}
+.content li:hover {
+	background-color: #ccc;
+}
+.content li:last-child {
+	border-bottom: none;
+}
+table {
+	width: 100%;
+}
+table tr {
+	width: 100%;
+}
+table tr td {
+	text-align: center;
+	padding: 20px 0px;
+}
+table tr td:nth-child(1) {
+	width: 10%;
+}
+table tr td:nth-child(2) {
+	width: 40%;
+	text-align: left;
+	font-size: 15px;
+}
+table tr td:nth-child(3) {
+	width: 20%;
+}
+table tr td:nth-child(4) {
+	width: 15%;
+}
+table tr td:nth-child(5) {
+	width: 15%;
+	color: #0066CC;
+}
+table i {
+	margin-right: 5px;
+	color: #0066CC;
+}
+/*分页*/
+.pagination {
+	height: 50px;
+	margin-top: 20px;
+}
+.pageInner {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	line-height: 32px;
+	background-color: #f9f7f6;
+	float: right;
+	clear: both;
+	margin-right: 20px;
+}
+.pageInner span {
+	display: inline-block;
+	font-size: 15px;
+	padding: 0 10px;
+	margin-left: 5px;
+	height: 30px;
+	color: #333;
+}
+.pageInner a {
+	background-color: #fff;
+	display: inline-block;
+	font-size: 15px;
+	border: 1px solid #D7D7D7;
+	padding: 0 10px;
+	margin-left: 5px;
+	height: 30px;
+	color: #333;
+}
+#sComment:hover {
+	background-color: #F9F7F6;
+}

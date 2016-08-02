@@ -1,0 +1,269 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 10px 20px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+.clearBoth {
+	clear: both;
+}
+/*内容*/
+
+
+/*搜索框*/
+.top {
+	padding: 20px 0;
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0px 1px 4px 0px #ccc;
+}
+.search {
+	margin-left: 20px;
+	height: 50px;
+	position: relative;
+}
+.search input {
+	padding-left: 5px;
+	height: 40px;
+	width: 400px;
+	line-height: 40px;
+	text-align: left;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 15px;
+}
+.search input:focus {
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 4px 0px #66AFE9;
+}
+.search a {
+	position: absolute;
+	top: 1px;
+	left: 350px;
+	display: inline-block;
+	width: 50px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	background-color: #595959;
+	color: #ddd;
+	border-radius: 0 5px 5px 0;
+}
+/*五种状态*/
+.state {
+	margin-left: 20px;
+	margin-top: 20px;
+}
+.state a {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 100px;
+	background-color: #393939;
+	color: #ddd;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.state a:hover {
+	color: #aaa;
+	background-color: #292929;
+}
+
+/*订单内容*/
+.order {
+	margin-top: 20px;
+	width: 100%;
+	padding: 0px 10px;
+}
+.orderTitle {
+	width: 100%;
+	margin-top: 10px;
+	background-color: #393939;
+	color: #ddd;
+	margin-bottom: 20px;
+}
+.orderTitle tr td {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.orderTitle tr td:nth-child(1) {
+	width: 40%;
+	min-width: 350px;
+}
+.orderTitle tr td:nth-child(2) {
+	width: 20%;
+	min-width: 180px;
+}
+.orderTitle tr td:nth-child(3) {
+	width: 20%;
+	min-width: 200px;
+}
+.orderTitle tr td:nth-child(4) {
+	width: 10%;
+	min-width: 100px;
+}
+.orderTitle tr td:nth-child(5) {
+	width: 10%;
+	min-width: 100px;
+}
+.orderContent {
+	width: 100%;
+	margin-bottom: 40px;
+}
+.info {
+	width: 100%;
+	background-color: #eee;
+}
+.info td {
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	color: #555;
+}
+.info td span {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.send {
+	display: inline-block;
+	width: 80px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-color: #797979;
+	border-radius: 5px;
+	color: #f9f9f9;
+}
+.send:hover {
+	background-color: #292929;
+}
+.proInfo {
+	width: 80%;
+	min-width: 545px;
+}
+.proInfo ul {
+	min-width: 720px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.proInfo ul li {
+	padding: 32px 0px;
+	float: left;
+	height: 154px;
+}
+.proInfo img {
+	width: 90px;
+	height: 90px;
+}
+.proInfo ul li:nth-child(1) {
+	padding-left: 25px;
+	width: 20%;
+	min-width: 140px;
+}
+.proInfo ul li:nth-child(2) {
+	width: 30%;
+	min-width: 200px;
+	padding: 0px 30px;
+}
+.proInfo ul li:nth-child(3) {
+	width: 25%;
+	line-height: 90px;
+	text-align: center;
+	min-width: 100px;
+}
+.proInfo ul li:nth-child(4) {
+	width: 25%;
+	line-height: 90px;
+	text-align: center;
+	min-width: 150px;
+}
+.productList td:nth-child(2) {
+	width: 10%;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	color: #e14041;
+	font-size: 17px;
+	min-width: 100px;
+}
+.productList td:nth-child(3) {
+	width: 10%;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	min-width: 100px;
+}
+.address {
+    padding: 5px 0 5px 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.address span {
+    margin-right: 15px;
+}
+/*多行文字居中*/
+.proInfo ul li:nth-child(2) {
+	font-size: 0;
+}
+.proInfo ul li:nth-child(2):before {
+	display: inline-block;
+	content: '.';
+	vertical-align: middle;
+	height: 100%;
+}
+.proInfo ul li:nth-child(2) span {
+	display: inline-block;
+	font-size: 15px;
+	vertical-align: middle;
+}
+/*分页*/
+.pagination {
+	height: 50px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.pageInner {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 12px;
+	line-height: 32px;
+	background-color: #fff;
+	float: right;
+	clear: both;
+	margin-right: 20px;
+}
+.pageInner span {
+	display: inline-block;
+	font-size: 15px;
+	padding: 0 10px;
+	margin-left: 5px;
+	height: 30px;
+	color: #333;
+}
+.pageInner a {
+	background-color: #fff;
+	display: inline-block;
+	font-size: 15px;
+	border: 1px solid #D7D7D7;
+	padding: 0 10px;
+	margin-left: 5px;
+	height: 30px;
+	color: #333;
+}

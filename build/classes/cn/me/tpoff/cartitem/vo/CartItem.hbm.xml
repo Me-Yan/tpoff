@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-2 16:19:50 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.me.tpoff.cartitem.vo.CartItem" table="t_cartitems">
+        <id name="cmid" type="java.lang.Integer">
+            <column name="cmid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="product" class="cn.me.tpoff.product.vo.Product" fetch="join" lazy="false">
+            <column name="pid" />
+        </many-to-one>
+        <property name="subcount" type="java.lang.Integer">
+            <column name="subcount" />
+        </property>
+        <property name="subtotal" type="java.lang.Double">
+            <column name="subtotal"/>
+        </property>
+        <many-to-one name="cart" class="cn.me.tpoff.cart.vo.Cart" fetch="join" lazy="false">
+            <column name="cid" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

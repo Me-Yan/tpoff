@@ -1,1 +1,1 @@
-Tomcat7   JDK7
+Tomcat7   JDK7   MySQL5.5

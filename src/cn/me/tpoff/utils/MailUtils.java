@@ -43,7 +43,7 @@ public class MailUtils {
 
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("yanyanghong_work@163.com", "WYjustforyou9496");
+				return new PasswordAuthentication("yanyanghong_work@163.com", "xxxxxxx");
 			}
 			
 		});
